@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int num, place=1;
+    char bin[100];
+    printf("Enter Number : ");
+    scanf("%d", &num);
+    int num1 = num;
+    while(num != 0){
+        int rem = num %16;
+        num = num /16;
+        place= place * 10;
+    }
+    printf("Hexa Decimal of %d is %d", num1, bin);
+    return 0;
+
+}
