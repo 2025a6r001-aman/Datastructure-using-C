@@ -1,39 +1,38 @@
 #include <stdio.h>
 #include<stdlib.h>
 
-#define SIZE 5
+#define SIZE 10
 
 int stack1[SIZE], stack2[SIZE];
 int top1 = -1, top2 = -1;
 
-// PUSH
-void push(int s, int x) {
-    if (s == 1) {
+void push(int S, int X) {
+    if (S == 1) {
         if (top1 == SIZE - 1) {
             printf("Overflow\n");
         } else {
-            stack1[++top1] = x;
+            stack1[++top1] = X;
         }
     }
-    else if (s == 2) {
+    else if (S == 2) {
         if (top2 == SIZE - 1) {
             printf("Overflow\n");
         } else {
-            stack2[++top2] = x;
+            stack2[++top2] = X;
         }
     }
 }
 
-// POP
-void pop(int s) {
-    if (s == 1) {
+
+void pop(int S) {
+    if (S == 1) {
         if (top1 == -1) {
             printf("Underflow\n");
         } else {
             printf("Popped: %d\n", stack1[top1--]);
         }
     }
-    else if (s == 2) {
+    else if (S == 2) {
         if (top2 == -1) {
             printf("Underflow\n");
         } else {
@@ -41,17 +40,15 @@ void pop(int s) {
         }
     }
 }
-
-// PEEK
-void peek(int s) {
-    if (s == 1) {
+void peek(int S) {
+    if (S == 1) {
         if (top1 == -1) {
             printf("Underflow\n");
         } else {
             printf("Top element: %d\n", stack1[top1]);
         }
     }
-    else if (s == 2) {
+    else if (S == 2) {
         if (top2 == -1) {
             printf("Underflow\n");
         } else {
@@ -59,55 +56,54 @@ void peek(int s) {
         }
     }
 }
-
-// DISPLAY
-void display(int s) {
-    int i;
-    if (s == 1) {
+void display(int S) {
+    if (S== 1) {
         if (top1 == -1) {
             printf("Underflow\n");
         } else {
-            for (i = top1; i >= 0; i--)
+            for (int i = top1; i >= 0; i--)
                 printf("%d ", stack1[i]);
             printf("\n");
         }
     }
-    else if (s == 2) {
+    else if (S == 2) {
         if (top2 == -1) {
             printf("Underflow\n");
         } else {
-            for (i = top2; i >= 0; i--)
+            for (int i = top2; i >= 0; i--)
                 printf("%d ", stack2[i]);
             printf("\n");
         }
     }
 }
-
-// MAIN
 int main() {
-    int choice, s, x;
+    int choice, S, X;
 
     while (1) {
-        printf("\n1.Push\n2.Pop\n3.Peek\n4.Display\n5.Exit\n");
+        printf("\n1.Push");
+        printf("\n2.Pop");
+        printf("\n3.Peek");
+        printf("\n4.Display");
+        printf("\n5.Exit\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
-printf("Enter stack number (1 or 2): ");
-        scanf("%d", &s);
+      printf("Enter stack number (1 or 2): ");
+        scanf("%d", &S);
 
         switch (choice) {
             case 1:
                 printf("Enter element: ");
-                scanf("%d", &x);
-                push(s, x);
+                scanf("%d", &X);
+                push(S, X);
                 break;
             case 2:
-                pop(s);
+                pop(S);
                 break;
             case 3:
-                peek(s);
+                peek(S);
                 break;
             case 4:
-                display(s);
+                display(S);
                 break;
                 case 5:
                 exit(0);
