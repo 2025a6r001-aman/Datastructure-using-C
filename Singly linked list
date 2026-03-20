@@ -1,0 +1,95 @@
+//singly linked list
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+    int data;
+    struct Node* next;
+};
+struct Node* head = NULL;
+struct Node* createNode(int data){
+    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));// malloc takes size of node and  returns address and fo that we convert generic to node data type for that we do typecasting by pointer node 
+      temp -> data= data;
+      temp -> next = NULL;
+      return temp;
+
+}
+void insertNodeInBeg(int data){
+    struct Node* newNode = createNode(data);
+    if(head == NULL){
+        head = newNode;
+
+
+
+    }
+    else{
+        newNode ->next = head;
+        head = newNode;
+
+    }
+}
+
+
+
+int main(){
+      while(1){
+        printf("\n***** Singly Linked List****\n");
+        printf("1. Insert in Beginning\n");
+        printf("2. Insert at End\n");
+        printf("3. Insert at any Position\n");
+        printf("4. Delete from Beginning\n");
+        printf("5. Delete from End\n");
+        printf("6. Delete from any position\n");
+        printf("7. Display List\n");
+        printf("8. Search element in List\n");
+        printf("9. Exit\n");
+        int choice, data,pos;
+        printf("Enter Choice:");
+        scanf("%d",&choice);
+        switch(choice){
+            case 1:
+                printf("Enter Data:");
+                scanf("%d",&data);
+                break;
+            case 2:
+                printf("Enter Data:");
+                scanf("%d",&data);
+                break;
+            case 3:
+                printf("Enter position:");
+                scanf("%d",&pos);
+                printf("Enter data:");
+                scanf("%d",&data);
+                break;
+            case 4:
+            
+                break;
+            case 5:
+                
+                break;
+            case 6:
+               printf("Enter position:");
+                scanf("%d",&pos);
+                
+                break;
+            case 7:
+                displayList();
+                break;
+            case 8:
+                 printf("Enter Searching Element: ");
+                 scanf("%d",&data);
+                 int index= search(data);
+                 if(index != -1)
+                 printf("Element found at index %d\n", index);
+                 else
+                  printf("Element not found!!!\n");
+                break;
+            case 9:
+                break;
+            default :
+                printf("Invaild choice!!!\n");
+        }
+        printf("\n\n");
+    }
+    return 0;
+}
+
