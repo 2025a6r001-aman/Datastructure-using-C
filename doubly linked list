@@ -37,7 +37,7 @@ void insertNodeAtEnd(int data){
 }
 void insertNodeAtAnyPos(int data, int pos){
     struct Node* newNode = createNode(data);
-    if(head == NULL && tail == NULL && pos == 0){
+    if(pos == 0){
         head = tail = newNode;
         printf("Node inserted at position %d !!!\n", pos);
     }
