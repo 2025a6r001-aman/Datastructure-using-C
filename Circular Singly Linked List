@@ -51,12 +51,12 @@ void insertinend(int data){
 
 void insertatpos(int data , int pos){        // 0 based
     if(head == NULL ){
-        if(pos==0)
+        if(pos==0)// this is for empty list if list is empty and pos =0 
             insertinBeg(data);// pos zero is valid in empty list
         else
             printf("Invalid position !!!\n");       
     }
-    else if(pos == 0)
+    else if(pos == 0)// if pos is zero in non empty list then insert In beg
         insertinBeg(data);
     else{
         struct Node* temp = head;
