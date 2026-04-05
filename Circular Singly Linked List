@@ -102,7 +102,7 @@ void deleteNodeFromEnd(){
        }
        else{
         struct Node* temp = head;
-        while(temp->next->next != head){
+        while(temp->next->next != head){// second last node 
             temp = temp->next;
         }
         temp->next = head;
@@ -142,7 +142,7 @@ void deleteNodeFromEnd(){
                 printf("Found !!!\n");
                 return;
             }
-            temp = temp->next;
+            temp = temp->next;// traverse until temp points to head and ends
          }while( temp != head);
          printf("\n");
         }
