@@ -9,7 +9,7 @@ struct Node* front = NULL, *rear = NULL;
 
 void enqueue(int data, int priority){
     struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
-    if(temp = NULL)
+    if(temp == NULL)
        printf("Queue overflow!!!\n");
     else{
         temp->data= data;
