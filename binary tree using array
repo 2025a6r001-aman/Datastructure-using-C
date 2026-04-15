@@ -63,7 +63,7 @@ int main(){
             case 1:
                 printf("Enter Value: ");
                 scanf("%d", &value);
-                insert(value);
+                insert(index,value);
                break;
             case 2:
                 preOrder(0);
